@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Globe from "worldwind-react-globe";
+import Navbar from "react-bootstrap/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    const layers = [
+      "eox-sentinal2-labels",
+      "coordinates",
+      "view-controls",
+      "stars",
+      "atmosphere-day-night",
+    ];
+
+    return (
+      <div className="App">
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand>
+            <img
+              alt="Space Apps 2020 Logo"
+              src="/Space_Apps_Logos/PNG/Square White.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            C E L E S T I A L
+          </Navbar.Brand>
+        </Navbar>
+        <Globe
+          layers={layers}
+          latitude={34.2}
+          longitude={-119.2}
+          altitude={10e6}
+        />
+      </div>
+    );
+  }
 }
-
-export default App;
