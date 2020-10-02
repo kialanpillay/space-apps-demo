@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 .App {
   text-align: center;
   color: white;
-  background-color: #282c34;
+  background-color: #000011;
   min-height: 100vh;
+}
+
+.brand {
+  font-family: "Lato", sans-serif;
 }
